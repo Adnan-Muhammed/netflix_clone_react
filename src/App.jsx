@@ -19,6 +19,7 @@ import Login from './pages/Login';
 
 import Account from './pages/Account';
 import Signup from './pages/SignUp';
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
 
@@ -31,7 +32,10 @@ function App() {
       <Route path='/'  element ={<Home/>}></Route>
       <Route path='/login'  element ={<Login/>}></Route>
       <Route path='/signup'  element ={<Signup/>}></Route>
-      <Route path='/account'  element ={<Account/>}></Route>
+      <Route path='/account'  element ={ <ProtectedRoute> <Account/> </ProtectedRoute> }></Route>
+
+
+
     </Routes>
 
     </AuthContextProvider>
